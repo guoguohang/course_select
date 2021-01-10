@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,3 +23,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+=======
+# course_select
+基于Ruby on Rails的国科大选课系统
+郭国航
+>>>>>>> 08c5810d7e9ef46555e6bc5b890b4dd4d3bfd9bb
