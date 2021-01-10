@@ -1,0 +1,39 @@
+<% provide(:title, "Home") %>
+<%= link_to image_tag("top.jpg")%>
+<div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-xs-12 col-sm-9">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
+          <div class="jumbotron">
+            <h2>欢迎来到国科大在线选课系统</h2>
+            <p>该系统基于RoR(Ruby on Rails)开发。</p>
+            <p>基本功能：</p>
+            <ul>
+              <li class="text-danger">用户注册、信息修改以及密码更改</li>
+              <li class="text-danger">增加课程信息</li>
+              <li class="text-danger">成绩录入、修改和提交</li>
+              <li class="text-danger">选课的开放、关闭功能</li>
+              <li class="text-danger">选课、候补选课及退选课程</li>
+              <li class="text-danger">查询课表及课程详情信息</li>
+              <li class="text-danger">查询已选学分</li>
+            </ul>
+          </div>
+          
+        </div><!--/.col-xs-12.col-sm-9-->
+
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+          <div class="list-group">
+            <a class="list-group-item active">快速通道</a>
+            <a href="https://www.ucas.ac.cn" class="list-group-item">中国科学院大学</a>
+            <a href="http://lib.ucas.ac.cn/" class="list-group-item">图书馆</a>
+            <a href="http://sep.ucas.ac.cn/" class="list-group-item">信息门户</a>
+            <a href="http://service.ucas.ac.cn/" class="list-group-item">校园服务</a>
+            
+            <a href="http://job.ucas.ac.cn/" class="list-group-item">就业信息</a>
+            <a href="http://www.cas.cn/" class="list-group-item">中国科学院</a>
+            <a href="https://onestop.ucas.edu.cn/home/info/6b9e95dc-5785-4eee-b25f-1f884698cfc3" class="list-group-item">资源下载</a>
+          </div>
+        </div><!--/.sidebar-offcanvas-->
+      </div><!--/row-->

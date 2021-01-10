@@ -1,0 +1,30 @@
+<% provide(:title, '增加课程') %>
+<h3>增加&nbsp;课程</h3>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <%= form_for(@course,url: add_path) do |f| %>
+
+        <%= f.label :name, "课程名：" %>
+        <%= f.text_field :name, class: 'form-control', placeholder: "输入课程名" %>
+        <%= f.label :course_code, "课程号：" %>
+        <%= f.text_field :course_code, class: 'form-control', placeholder: "输入课程号" %>
+        <%= f.label :course_type, "课程种类：" %>
+        <%= f.text_field :course_type, class: 'form-control', placeholder: "输入课程种类" %>
+        <%= f.label :teaching_type, "授课方式：" %>
+        <%= f.text_field :teaching_type, class: 'form-control', placeholder: "输入授课方式" %>
+        <%= f.label :exam_type, "考核方式：" %>
+        <%= f.text_field :exam_type, class: 'form-control', placeholder: "输入考核方式" %>
+        <%= f.label :credit, "课时/学分：" %>
+        <%= f.text_field :credit, class: 'form-control', placeholder: "输入课时/学分" %>
+        <%= f.label :limit_num, "限选人数：" %>
+        <%= f.text_field :limit_num, class: 'form-control', placeholder: "输入限选人数" %>
+        <%= f.label :class_room, "上课教室：" %>
+        <%= f.text_field :class_room, class: 'form-control', placeholder: "输入上课教室" %>
+        <%= f.label :course_time, "上课时间：" %>
+        <%= f.text_field :course_time, class: 'form-control', placeholder: "输入上课时间" %>
+        <%= f.label :course_week, "上课周数：" %>
+        <%= f.text_field :course_week, class: 'form-control', placeholder: "输入上课周数" %>
+        <%= f.submit "添加课程", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+</div>

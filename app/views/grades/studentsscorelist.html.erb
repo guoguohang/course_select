@@ -1,0 +1,32 @@
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">选课学生成绩</h3>
+    </div>
+    <div class="panel-body">
+        <table class="table table-hover table-striped">
+        <thead class="thead-light">
+            <tr>
+            <th>课程名</th>
+            <th>姓名</th>
+            <th>学号</th>
+            <th>专业</th>
+            <th>学院</th>
+            <th>成绩</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @grades.each do |grade| %>
+                <tr>
+                    <td><%=grade.course.name%></td>
+                    <td><%=grade.user.name%></td>
+                    <td><%=grade.user.id%></td>
+                    <td><%=grade.user.major%></td>
+                    <td><%=grade.user.department%></td>
+                    <td><%=grade.grade%></td>
+                </tr>
+            <% end %>
+            
+        </tbody>
+        </table>
+    </div>
+</div>

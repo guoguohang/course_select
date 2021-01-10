@@ -1,0 +1,35 @@
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">选课学生名单</h3>
+    </div>
+    <div class="panel-body">
+        <table class="table table-hover table-striped">
+        <thead class="thead-light">
+            <tr>
+            <th>课程名</th>
+            <th>姓名</th>
+            <th>学号</th>
+            <th>专业</th>
+            <th>学院</th>
+            <th>成绩</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @grades.each do |grade| %>
+                <tr>
+                    <td><%=grade.course.name%></td>
+                    <td><%=grade.user.name%></td>
+                    <td><%=grade.user.id%></td>
+                    <td><%=grade.user.major%></td>
+                    <td><%=grade.user.department%></td>
+                    <%= form_for grade, url: grade_url(id: grade.id, course_id: grade.course.id), method: :patch do |f| %>
+                          <td><%= f.text_field :grade %></td>
+                          <td><%= f.submit "提交", class: "btn btn-success btn-xs" %></td>
+                    <% end %>
+                </tr>
+            <% end %>
+            
+        </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to "课程管理", root_path, class: 'navbar-brand' %>
+    </div>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "主页", root_path %></li>
+        <li><%= link_to "帮助", "https://onestop.ucas.ac.cn/home/tool/f5e477a3-2b5f-495a-8504-86fd91ed12ee/1" %></li>
+        <% if logged_in? %>
+          <li><%= link_to current_user.name, "" %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              账户 <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "个人信息", current_user %></li>
+              <li><%= link_to "修改信息", edit_user_path(current_user) %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to "退出", logout_path, method: "delete" %>
+              </li>
+            </ul>
+          </li>
+          <% else %>
+            <li><%= link_to "登录", login_path %></li>
+          <% end %>
+
+          <% if student_logged_in? %>
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              学生平台 <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "学期课表", courses_path %></li>
+              <li><%= link_to "选修课程", list_courses_path %></li>
+              <li><%= link_to "已选课程", studentselected_courses_path %></li>
+              <li><%= link_to "成绩查询", scorelist_grades_path %></li>
+              <li><%= link_to "查看已选学分", subcredit_courses_path %></li>
+            </ul>
+          </li>
+          <% end %>
+
+          <% if admin_logged_in? %>
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              管理员平台 <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "开放选课", open_path, method: "post" %></li>
+              <li><%= link_to "关闭选课", close_path, method: "post" %></li>
+              <li><%= link_to "增加课程", add_path, method: "get" %></li>
+            </ul>
+          </li>
+          <% end %>
+
+           <% if teacher_logged_in? %>
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              教师平台 <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "录入成绩", write_path, method: "post" %></li>
+              <li><%= link_to "查看成绩", browse_path, method: "get" %></li>
+            </ul>
+          </li>
+          <% end %>
+
+      </ul>
+    </nav>
+  </div>
+</header>
